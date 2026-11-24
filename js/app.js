@@ -114,12 +114,18 @@
     return G.describeParse({ kind: 'verb', meta: meta });
   }
 
+  /* dictionary entry for display: omit missing-part placeholders ("—")
+     so "vīvō, vīvere, vīxī, — — imperative" doesn't double up the dash */
+  function verbParts(w) {
+    return w.p.filter(function (x) { return x && x !== '—'; }).join(', ');
+  }
+
   function promptFor(entry) {
     var w = entry.word, s = entry.skill;
     if (s.kind === 'verb') {
-      if (w.irr) return w.p[1] + ' — ' + describeRequest(s.meta);
-      if (s.meta.imperative) return w.p[1] + ' — ' + describeRequest(s.meta);
-      return w.p[1] + ' — ' + describeRequest(s.meta);
+      /* show all dictionary parts (pres, inf, perf, supine) — the stem
+         and perfect aren't guessable from the infinitive alone */
+      return verbParts(w) + ' — ' + describeRequest(s.meta);
     }
     if (w.type === 'adj') {
       if (w.decl === 'comp') {
@@ -634,7 +640,7 @@
       var k = G.normalize(s.form);
       if (!parsePool[k]) parsePool[k] = {
         form: s.form,
-        prompt: w.type === 'v' ? w.p[1] : w.l,
+        prompt: w.type === 'v' ? verbParts(w) : w.l,
         kind: kind,
         fields: parseFieldsFor(meta, kind),
         metas: []

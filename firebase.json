@@ -1,6 +1,7 @@
 {
   "hosting": {
     "public": ".",
+    "site": "cursus-latin",
     "ignore": [
       "firebase.json",
       ".firebaserc",
