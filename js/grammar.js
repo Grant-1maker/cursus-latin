@@ -389,6 +389,47 @@
         m: { sg: ['ille', 'illīus', 'illī', 'illum', 'illō'], pl: ['illī', 'illōrum', 'illīs', 'illōs', 'illīs'] },
         f: { sg: ['illa', 'illīus', 'illī', 'illam', 'illā'], pl: ['illae', 'illārum', 'illīs', 'illās', 'illīs'] },
         n: { sg: ['illud', 'illīus', 'illī', 'illud', 'illō'], pl: ['illa', 'illōrum', 'illīs', 'illa', 'illīs'] }
+      },
+      /* reference grammar pp. 195-196 — arrays are [nom, gen, dat, acc, abl] */
+      ipse: {
+        m: { sg: ['ipse', 'ipsīus', 'ipsī', 'ipsum', 'ipsō'], pl: ['ipsī', 'ipsōrum', 'ipsīs', 'ipsōs', 'ipsīs'] },
+        f: { sg: ['ipsa', 'ipsīus', 'ipsī', 'ipsam', 'ipsā'], pl: ['ipsae', 'ipsārum', 'ipsīs', 'ipsās', 'ipsīs'] },
+        n: { sg: ['ipsum', 'ipsīus', 'ipsī', 'ipsum', 'ipsō'], pl: ['ipsa', 'ipsōrum', 'ipsīs', 'ipsa', 'ipsīs'] }
+      },
+      idem: {
+        m: { sg: ['idem', 'eiusdem', 'eidem', 'eundem', 'eōdem'], pl: ['eidem', 'eōrundem', 'eisdem', 'eōsdem', 'eisdem'] },
+        f: { sg: ['eadem', 'eiusdem', 'eidem', 'eandem', 'eādem'], pl: ['eaedem', 'eārundem', 'eisdem', 'eāsdem', 'eisdem'] },
+        n: { sg: ['idem', 'eiusdem', 'eidem', 'idem', 'eōdem'], pl: ['eadem', 'eōrundem', 'eisdem', 'eadem', 'eisdem'] }
+      },
+      'quīdam': {
+        m: { sg: ['quīdam', 'cuiusdam', 'cuidam', 'quendam', 'quōdam'], pl: ['quīdam', 'quōrundam', 'quibusdam', 'quōsdam', 'quibusdam'] },
+        f: { sg: ['quaedam', 'cuiusdam', 'cuidam', 'quandam', 'quādam'], pl: ['quaedam', 'quārundam', 'quibusdam', 'quāsdam', 'quibusdam'] },
+        n: { sg: ['quoddam', 'cuiusdam', 'cuidam', 'quoddam', 'quōdam'], pl: ['quaedam', 'quōrundam', 'quibusdam', 'quaedam', 'quibusdam'] }
+      },
+      /* interrogative: nom quis / quis / quid, the rest like the relative */
+      quis: {
+        m: { sg: ['quis', 'cuius', 'cui', 'quem', 'quō'], pl: ['quī', 'quōrum', 'quibus', 'quōs', 'quibus'] },
+        f: { sg: ['quis', 'cuius', 'cui', 'quam', 'quā'], pl: ['quae', 'quārum', 'quibus', 'quās', 'quibus'] },
+        n: { sg: ['quid', 'cuius', 'cui', 'quid', 'quō'], pl: ['quae', 'quōrum', 'quibus', 'quae', 'quibus'] }
+      },
+      aliquis: {
+        m: { sg: ['aliquis', 'alicuius', 'alicui', 'aliquem', 'aliquō'], pl: ['aliquī', 'aliquōrum', 'aliquibus', 'aliquōs', 'aliquibus'] },
+        f: { sg: ['aliquis', 'alicuius', 'alicui', 'aliquam', 'aliquā'], pl: ['aliquae', 'aliquārum', 'aliquibus', 'aliquās', 'aliquibus'] },
+        n: { sg: ['aliquid', 'alicuius', 'alicui', 'aliquid', 'aliquō'], pl: ['aliquae', 'aliquōrum', 'aliquibus', 'aliquae', 'aliquibus'] }
+      },
+      quisquam: {
+        m: { sg: ['quisquam', 'cuiusquam', 'cuiquam', 'quemquam', 'quōquam'] },
+        f: { sg: ['quisquam', 'cuiusquam', 'cuiquam', 'quamquam', 'quāquam'] },
+        n: { sg: ['quicquam', 'cuiusquam', 'cuiquam', 'quicquam', 'quōquam'] }
+      },
+      /* alter / uter: gen -ius, dat -i; plural like bonus (p. 192) */
+      uter: {
+        m: { sg: ['uter', 'utrīus', 'utrī', 'utrum', 'utrō'], pl: ['utrī', 'utrōrum', 'utrīs', 'utrōs', 'utrīs'] },
+        f: { sg: ['utra', 'utrīus', 'utrī', 'utram', 'utrā'], pl: ['utrae', 'utrārum', 'utrīs', 'utrās', 'utrīs'] },
+        n: { sg: ['utrum', 'utrīus', 'utrī', 'utrum', 'utrō'], pl: ['utra', 'utrōrum', 'utrīs', 'utra', 'utrīs'] }
+      },
+      'nēmō': {
+        m: { sg: ['nēmō', 'nēminis', 'nēminī', 'nēminem', 'nēmine'] }
       }
     };
     var out = [];
@@ -397,8 +438,10 @@
     GENDERS.forEach(function (g) {
       if (!t[g]) return;
       NUMS.forEach(function (num) {
+        var row = t[g][num];
+        if (!row) return; /* e.g. nēmō, quisquam: no plural */
         CASES.forEach(function (cs) {
-          var f = t[g][num][CASES.indexOf(cs)];
+          var f = row[CASES.indexOf(cs)];
           if (f && f !== '—') out.push({ form: f, kind: 'noun', meta: { cs: cs, num: num, g: g } });
         });
       });

@@ -136,7 +136,14 @@
     }
     if (w.type === 'p') {
       if (w.which === 'sē') return 'sē (reflexive) — ' + G.CASE_LABEL[s.meta.cs] + ' ' + G.NUM_LABEL[s.meta.num];
-      var dictHead = { ego: 'ego', 'tū': 'tū', is: 'is / ea / id', 'hīc': 'hīc, haec, hōc', ille: 'ille, illa, illud', quī: 'quī, quae, quod' }[w.which];
+      var dictHead = {
+        ego: 'ego', 'tū': 'tū', is: 'is / ea / id', 'hīc': 'hīc, haec, hōc',
+        ille: 'ille, illa, illud', quī: 'quī, quae, quod',
+        ipse: 'ipse, ipsa, ipsum', idem: 'idem, eadem, idem',
+        'quīdam': 'quīdam, quaedam, quoddam', quis: 'quis, quid?',
+        aliquis: 'aliquis, aliquis, aliquid', quisquam: 'quisquam, quicquam',
+        uter: 'uter, utra, utrum', 'nēmō': 'nēmō'
+      }[w.which] || w.l;
       return dictHead + ' — ' + G.CASE_LABEL[s.meta.cs] + ' ' + G.NUM_LABEL[s.meta.num] + (s.meta.g ? ' (' + G.GENDER_LABEL[s.meta.g] + ')' : '');
     }
     return w.l + ' — ' + G.CASE_LABEL[s.meta.cs] + ' ' + G.NUM_LABEL[s.meta.num];
@@ -238,7 +245,7 @@
       { id: 'nouns', label: 'Nouns', hint: '5 declensions' },
       { id: 'verbs', label: 'Verbs', hint: '5 conjugations, active & passive' },
       { id: 'adjectives', label: 'Adjectives', hint: '1st/2nd, 3rd, comparisons' },
-      { id: 'pronouns', label: 'Pronouns', hint: 'personal, demonstrative, relative' }
+      { id: 'pronouns', label: 'Pronouns', hint: 'personal, demonstrative, relative, indefinite' }
     ];
     var crow = h('div', 'tcat-row');
     cats.forEach(function (c) {
@@ -473,7 +480,7 @@
           NUMS.map(function (n) { return { id: n, label: G.NUM_LABEL[n] }; }),
           function (c, cs) { return lookup(specs, function (s) { return s.num === c.id && s.cs === cs; }); }));
       }
-      deks.appendChild(h('p', 'muted', 'Vocabulary only (no table here yet): idem, nēmō, aliquis, quīdam, quisquam, uter.'));
+      deks.appendChild(h('p', 'muted', 'quisquam and nēmō have no plural — the site shows only the forms the course uses.'));
     } else {
       /* verbs: indicative mini-tables per tense under Active/Passive, then the subjunctive set */
       var voices = [];
