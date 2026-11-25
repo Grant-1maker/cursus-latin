@@ -292,7 +292,8 @@
       GENDERS.forEach(function (g) {
         NUMS.forEach(function (num) {
           CASES.forEach(function (cs) {
-            add(nominalForm(w, cs, num, g), 'noun', { cs: cs, num: num, g: g });
+            /* formOf routes comparatives to compAdjectiveForm, the rest to nominalForm */
+            add(formOf(w, { cs: cs, num: num, g: g }), 'noun', { cs: cs, num: num, g: g });
           });
         });
       });
