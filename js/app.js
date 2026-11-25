@@ -196,6 +196,18 @@
     return G.normalize(String(s)).replace(/[!.,?;:'"()\[\]\u2014\u2013-]/g, '').replace(/\s+/g, '').trim();
   }
 
+  /* the dictionary gives the supine (ventum), but perfect-passive forms need
+     the participle agreeing with the subject (ventus / ventī / venta) */
+  function supineNote(entry) {
+    var m = entry.skill.meta || {}, w = entry.word;
+    if (m.voice !== 'pass' || ['perf', 'plup'].indexOf(m.tense) < 0) return '';
+    var sup = w.p && w.p[3];
+    if (!sup || sup === '—' || !entry.skill.form) return '';
+    var ppp = entry.skill.form.split(' ')[0];
+    if (!ppp || normalizeSans(sup) === normalizeSans(ppp)) return '';
+    return ' <span class="muted">Here <b>' + esc(ppp) + '</b> is the perfect participle agreeing with the subject; <b>' + esc(sup) + '</b> is the supine.</span>';
+  }
+
   function checkAnswer() {
     if (!state.qitem) return;
     var input = el('q-answer');
@@ -210,7 +222,7 @@
     el('q-feedback').className = 'feedback ' + (ok ? 'good' : 'bad');
     el('q-feedback').innerHTML = ok
       ? ['✓', '✓ bene!', 'correct', 'exact'][Math.floor(Math.random() * 4)]
-      : '✗ wanted: <strong>' + esc(state.qitem.skill.form) + '</strong>';
+      : '✗ wanted: <strong>' + esc(state.qitem.skill.form) + '</strong>' + supineNote(state.qitem);
     input.disabled = true;
     el('q-check').classList.add('hidden');
     el('q-next').classList.remove('hidden');
