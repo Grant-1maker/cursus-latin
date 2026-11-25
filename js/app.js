@@ -420,7 +420,7 @@
     host.innerHTML = '';
     state.tableState = { l: w.l };
 
-    host.appendChild(h('h3', 'latin', esc(w.l)));
+    host.appendChild(h('h3', 'latin', esc(w.type === 'v' ? verbParts(w) : w.l)));
     host.appendChild(h('p', 'muted', esc(w.meaning || '')));
 
     var cells = [];
