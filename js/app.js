@@ -296,13 +296,17 @@
   }
 
   function catOf(w) {
-    return w.type === 'n' ? 'nouns' : w.type === 'v' ? 'verbs' : w.type === 'adj' ? 'adjectives' : 'pronouns';
+    if (w.type === 'n') return 'nouns';
+    if (w.type === 'v') return 'verbs';
+    if (w.type === 'adj') return 'adjectives';
+    if (w.type === 'p') return 'pronouns';
+    return ''; /* adverbs, conjunctions, prepositions, numerals: vocabulary only */
   }
   function subOf(w) {
     if (w.type === 'n') return w.decl;
     if (w.type === 'v') return w.irr ? 'irr' : String(w.conj);
     if (w.type === 'adj') return w.decl;
-    return String(w.conj);
+    return w.type;
   }
   var SUB_TYPES = {
     nouns: [
@@ -334,7 +338,7 @@
   function featureSpecsFor(w) {
     var specs = [];
     if (w.type === 'n') {
-      NUMS.forEach(function (n) { CASE_ORDER.forEach(function (c) {
+      (w.plOnly ? ['pl'] : NUMS).forEach(function (n) { CASE_ORDER.forEach(function (c) {
         specs.push({ cs: c, num: n, alt: (w.decl === 'd3i' && c === 'abl' && n === 'sg') ? [w.stem + 'ī'] : undefined, label: G.NUM_LABEL[n].slice(0, 3).replace('sin', 'sing') + ' ' + G.CASE_LABEL[c] });
       }); });
     } else if (w.type === 'adj') {
@@ -444,7 +448,7 @@
 
     if (kind === 'nouns') {
       deks.appendChild(caseTable('',
-        NUMS.map(function (n) { return { id: n, label: G.NUM_LABEL[n] }; }),
+        (w.plOnly ? ['pl'] : NUMS).map(function (n) { return { id: n, label: G.NUM_LABEL[n] }; }),
         function (c, cs) { return lookup(specs, function (s) { return s.num === c.id && s.cs === cs; }); }));
     } else if (kind === 'adjectives') {
       ['m', 'f', 'n'].forEach(function (g) {
@@ -469,6 +473,7 @@
           NUMS.map(function (n) { return { id: n, label: G.NUM_LABEL[n] }; }),
           function (c, cs) { return lookup(specs, function (s) { return s.num === c.id && s.cs === cs; }); }));
       }
+      deks.appendChild(h('p', 'muted', 'Vocabulary only (no table here yet): idem, nēmō, aliquis, quīdam, quisquam, uter.'));
     } else {
       /* verbs: indicative mini-tables per tense under Active/Passive, then the subjunctive set */
       var voices = [];

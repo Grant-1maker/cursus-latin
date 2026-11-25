@@ -284,7 +284,7 @@
     }
     if (w.type === 'v' && w.vocabOnly) return out; /* irregular verbs without a paradigm: flashcards only */
     if (w.type === 'n') {
-      NUMS.forEach(function (num) {
+      (w.plOnly ? ['pl'] : NUMS).forEach(function (num) {
         CASES.forEach(function (cs) { add(nominalForm(w, cs, num), 'noun', { cs: cs, num: num }); });
       });
       if (w.decl === 'adj3') { /* handled as adj */ }
