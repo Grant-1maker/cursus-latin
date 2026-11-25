@@ -227,17 +227,17 @@
     },
     {
       id: 'x-imperator', title: 'Imperātor in senātū', words: 75,
-      latin: 'Imperātor, cum ad urbem rediisset, in senātū contiōnem habuit. senātōrēs, quī adventum eius nōn exspectāverant, mirābantur quid dictūrus esset. ille, clārā vōce, exposuit quōmodo hostēs in montibus obsessī essent, et quantōs labōrēs mīlitēs perpessī essent. "sī lēgātus meus, quī pugnāverat, mihi auxiliō nōn vēnisset," inquit, "vix victōriam adeptī essēmus." sed diī, quōrum potestās maxima est, nōs servāvērunt. senātus, his verbīs audītīs, decrēvit ut imperātōrī triumphus dēcernerētur. paucī cēnsērunt rem nōn tam facilem esse quam videbātur.',
+      latin: 'Imperātor, cum ad urbem rediisset, in senātū contiōnem habuit. senātōrēs, quī adventum eius nōn exspectāverant, mirābantur quid dictūrus esset. ille, clārā vōce, exposuit quōmodo hostēs in montibus obsessī essent, et quantōs labōrēs mīlitēs perpessī essent. nēmō dubitāvit quīn imperātor victōriam adeptūrus esset, quod mīlitēs eius tam fortiter pugnāverant. sed diī, quōrum potestās maxima est, nōs servāvērunt. senātus, his verbīs audītīs, decrēvit ut imperātōrī triumphus dēcernerētur. paucī tamen cēnsērunt rem nōn tam facilem esse quam videbātur.',
       aids: [
         ['Imperātor', 'general, commander'], ['contiōnem', 'public speech, address'], ['senātōrēs', 'senators'],
         ['adventum', 'arrival'], ['exspectāverant', 'had expected'], ['dictūrus', 'about to say, going to say'],
         ['quōmodo', 'how'], ['obsessī', 'besieged'], ['perpessī', 'having endured (deponent)'],
-        ['lēgātus', 'lieutenant, legate'], ['auxiliō', 'to the aid (of) (dative)'], ['vix', 'scarcely, hardly'],
-        ['adeptī', 'having won, obtained (deponent)'], ['potestās', 'power, authority'], ['servāvērunt', 'saved'],
+        ['nēmō', 'nobody'], ['dubitāvit', 'doubted'], ['quīn', 'that (after nēmō dubitāre)'],
+        ['adeptūrus', 'going to win, about to obtain (future participle)'], ['potestās', 'power, authority'], ['servāvērunt', 'saved'],
         ['audītīs', 'having been heard'], ['decrēvit', 'decreed, resolved'], ['triumphus', 'triumph'],
         ['dēcernerētur', 'should be decreed'], ['cēnsērunt', 'thought, judged'], ['facilem', 'easy']
       ],
-      translation: 'The general, when he had returned to the city, held a speech in the senate. The senators, who had not expected his arrival, were wondering what he was going to say. He, in a clear voice, explained how the enemy had been besieged in the mountains, and what great hardships the soldiers had endured. "If my lieutenant, who had fought, had not come to my aid," he said, "we would scarcely have won the victory." But the gods, whose power is greatest, saved us. The senate, these words having been heard, decreed that a triumph should be decreed to the general. A few, however, thought that the matter was not as easy as it seemed.',
+      translation: 'The general, when he had returned to the city, held a speech in the senate. The senators, who had not expected his arrival, were wondering what he was going to say. He, in a clear voice, explained how the enemy had been besieged in the mountains, and what great hardships the soldiers had endured. Nobody doubted that the general was going to win the victory, because his soldiers had fought so bravely. But the gods, whose power is greatest, saved us. The senate, these words having been heard, decreed that a triumph should be decreed to the general. A few, however, thought that the matter was not as easy as it seemed.',
       notes: [
         'cum ad urbem rediisset … contiōnem habuit — cum + pluperfect subjunctive: "when he had returned".',
         'senātōrēs, quī adventum eius nōn exspectāverant — relative clause with pluperfect; adventum = accusative object.',
@@ -245,10 +245,8 @@
         'clārā vōce — ablative of manner: "in a clear voice".',
         'exposuit quōmodo hostēs in montibus obsessī essent — indirect question; obsessī agrees with hostēs (passive).',
         'et quantōs labōrēs mīlitēs perpessī essent — second indirect question; perpessī from the deponent perpetior.',
-        'sī … nōn vēnisset … adeptī essēmus — past counterfactual condition; both verbs pluperfect subjunctive.',
-        'quī pugnāverat — relative clause inside the condition; the lieutenant had fought.',
-        'mihi auxiliō vēnisset — dative of aid: "come to my aid" (auxiliō + dative).',
-        'vix victōriam adeptī essēmus — deponent perfect participle + essem: "we would scarcely have won".',
+        'nēmō dubitāvit quīn imperātor victōriam adeptūrus esset — after nēmō dubitāre, quīn + subjunctive = "nobody doubted that …"; adeptūrus = future participle.',
+        'quod mīlitēs eius tam fortiter pugnāverant — causal relative clause: "because his soldiers had fought so bravely".',
         'diī, quōrum potestās maxima est — relative clause with present tense; potestās maxima = "greatest power".',
         'his verbīs audītīs — ablative absolute: "these words having been heard".',
         'ut imperātōrī triumphus dēcernerētur — indirect command/decree: ut + subjunctive passive.',
@@ -261,19 +259,17 @@
         { la: 'mirābantur quid dictūrus esset', en: 'were wondering what he was going to say', m: 2 },
         { la: 'clārā vōce', en: 'in a clear voice (ablative of manner)', m: 1 },
         { la: 'exposuit quōmodo hostēs in montibus obsessī essent', en: 'explained how the enemy had been besieged in the mountains', m: 3 },
-        { la: 'et quantōs labōrēs mīlitēs perpessī essent', en: 'and what great hardships the soldiers had endured', m: 3 },
-        { la: 'sī … nōn vēnisset', en: 'if he had not come (past counterfactual)', m: 2 },
-        { la: 'lēgātus meus, quī pugnāverat', en: 'my lieutenant, who had fought', m: 1 },
-        { la: 'mihi auxiliō', en: 'to my aid (dative of aid)', m: 1 },
-        { la: 'vix victōriam adeptī essēmus', en: 'we would scarcely have won the victory (deponent)', m: 2 },
+        { la: 'et quantōs labōrēs mīlitēs perpessī essent', en: 'and what great hardships the soldiers had endured', m: 4 },
+        { la: 'nēmō dubitāvit quīn … adeptūrus esset', en: 'nobody doubted that the general was going to win (quīn + subjunctive)', m: 3 },
+        { la: 'quod mīlitēs eius tam fortiter pugnāverant', en: 'because his soldiers had fought so bravely (causal clause)', m: 2 },
         { la: 'diī, quōrum potestās maxima est', en: 'the gods, whose power is greatest', m: 2 },
         { la: 'nōs servāvērunt', en: 'saved us (perfect)', m: 1 },
         { la: 'his verbīs audītīs', en: 'these words having been heard (ablative absolute)', m: 2 },
         { la: 'decrēvit ut imperātōrī triumphus dēcernerētur', en: 'decreed that a triumph should be decreed to the general', m: 3 },
-        { la: 'paucī cēnsērunt', en: 'a few thought / judged', m: 1 },
+        { la: 'paucī tamen cēnsērunt', en: 'a few, however, thought / judged', m: 1 },
         { la: 'rem nōn tam facilem esse quam videbātur', en: 'that the matter was not as easy as it seemed', m: 3 },
         { la: 'inquit', en: 'he said (historic present)', m: 1 },
-        { la: 'style & sense overall', en: 'fluent English; indirect questions and counterfactuals natural (up to 6)', m: 6 }
+        { la: 'style & sense overall', en: 'fluent English; indirect questions and subjunctives natural (up to 6)', m: 6 }
       ]
     }
   ];
