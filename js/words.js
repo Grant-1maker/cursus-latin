@@ -741,10 +741,11 @@
       return w(c[1], { type: 'adj', decl: 'comp', stem: c[2], c: 25, meaning: 'comparative of ' + c[0] + ': ' + c[3] });
     })
   ).concat(
-    [['optimus', 'best', 'optim'], ['maximus', 'greatest', 'maxim'],
-     ['pessimus', 'worst', 'pessim'], ['minimus', 'smallest', 'minim'],
-     ['fortissimus', 'very brave', 'fortissim']].map(function (s) {
-      return w(s[0] + ', -a, -um', { type: 'adj', decl: 'adj12', stem: s[2], c: 25, meaning: s[1] });
+    /* superlatives (forms drilled from ch. 25, like the comparatives) */
+    [['bonus', 'optimus', 'best', 'optim'], ['magnus', 'maximus', 'greatest', 'maxim'],
+     ['malus', 'pessimus', 'worst', 'pessim'], ['parvus', 'minimus', 'smallest', 'minim'],
+     ['fortis', 'fortissimus', 'bravest', 'fortissim']].map(function (s) {
+      return w(s[1] + ', -a, -um', { type: 'adj', decl: 'sup', stem: s[3], c: 25, meaning: 'superlative of ' + s[0] + ': ' + s[2] });
     })
   );
 

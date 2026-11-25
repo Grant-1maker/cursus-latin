@@ -62,7 +62,7 @@
     if (!chapterGate(w)) return false;
     if (w.type === 'n' && !declOk(w.decl)) return false;
     if (w.type === 'adj') {
-      if (!(declOk(w.decl === 'comp' ? 'comp' : w.decl === 'adj3' ? 'adj3' : 'adj12'))) return false;
+      if (!(declOk(w.decl === 'comp' ? 'comp' : w.decl === 'sup' ? 'sup' : w.decl === 'adj3' ? 'adj3' : 'adj12'))) return false;
     }
     if (w.type === 'p') {
       var map = { ego: 'pronPerson', 'tū': 'pronPerson', sē: 'pronPerson', is: 'pronIs', 'hīc': 'pronHic', ille: 'pronIlle', quī: 'pron' };
@@ -325,7 +325,8 @@
     adjectives: [
       { id: 'adj12', label: '1st & 2nd (-a, -um)', match: ['adj12'] },
       { id: 'adj3', label: '3rd', match: ['adj3'] },
-      { id: 'comp', label: 'comparatives', match: ['comp'] }
+      { id: 'comp', label: 'comparatives', match: ['comp'] },
+      { id: 'sup', label: 'superlatives', match: ['sup'] }
     ],
     pronouns: [{ id: 'p', label: 'pronouns', match: [] }]
   };

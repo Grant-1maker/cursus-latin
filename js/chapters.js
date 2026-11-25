@@ -61,7 +61,7 @@
     totalSteps: { partI: [1, 16], partII: [17, 32], partIII: [33, 54] },
     featureIntro: {
       d1: 1, d2m: 2, d2ms: 2, d2n: 2, d3c: 5, d3cn: 10, d3i: 10, d3in: 12, d4: 20, d5: 23,
-      adj12: 3, adj3: 7, comp: 25,
+      adj12: 3, adj3: 7, comp: 25, sup: 25,
       conj1: 1, conj2: 2, conj3: 4, conj33: 6, conj4: 5,
       pres: 1, imp: 18, fut: 19, perf: 17, plup: 18, fp: 21,
       analyticPass: 31, syntheticPass: 32,

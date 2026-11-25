@@ -137,7 +137,7 @@
     if (w.frc && w.frc[key]) return w.frc[key];
     if (w.decl === 'adj3' && cs === 'abl' && num === 'sg') return w.stem + '\u012b'; /* adjectival ablative is -\u012b, never the noun -e */
     var decl;
-    if (w.decl === 'adj12') decl = (g === 'm' ? DECL.d2m : (g === 'f' ? DECL.d1 : DECL.d2n));
+    if (w.decl === 'adj12' || w.decl === 'sup') decl = (g === 'm' ? DECL.d2m : (g === 'f' ? DECL.d1 : DECL.d2n));
     else if (w.decl === 'adj3') decl = g === 'n' ? DECL.d3in : DECL.d3i;
     else decl = DECL[w.decl];
     if (!decl) return null;
