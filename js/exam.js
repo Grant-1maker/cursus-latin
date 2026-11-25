@@ -170,6 +170,60 @@
         { la: 'glōriam quam quaesīvit', en: 'the glory which he had sought (relative + perfect)', m: 2 },
         { la: 'style & sense overall', en: 'fluent English, no Latin word-order left behind (up to 7)', m: 7 }
       ]
+    },
+    {
+      id: 'x-claudia', title: 'Claudia in īnsulam', words: 75,
+      latin: 'Claudia cum patre in īnsulam proficīscī parābat. multae difficultātēs erant: nāvis vetus reficienda, ventus vehemēns, mare saevum. sed nauta perītus, quī multōs annōs eādem in nāve laborāverat, eīs auxilium promīsit ut tūtē nāvigārent. cum diēs vēnisset, amīcus affirmāvit sē ventūrum esse. Claudia, cum cibum portāret, rogāvit ubi nāvis esset. nauta respondit: "sī ventus secundus flābit, celerius quam spērāmus perveniēmus; sī flāvisset, mānsissēmus." ventō secundō flante, nāvis ā nautīs acta est; puella gaudēbat sē celerrimē pervēnisse.',
+      aids: [
+        ['Claudia', 'Claudia (a Roman girl\'s name)'], ['proficīscī', 'to set out (deponent)'],
+        ['difficultātēs', 'difficulties'], ['reficienda', 'needing to be repaired (gerundive)'],
+        ['vehemēns', 'violent, fierce'], ['saevum', 'rough, stormy'], ['perītus', 'skilled, experienced'],
+        ['tūtē', 'safely'], ['affirmāvit', 'asserted, said firmly'], ['ventūrum esse', 'would come'],
+        ['flābit', 'will blow'], ['celerius', 'more quickly'], ['flāvisset', 'had blown'],
+        ['mānsissēmus', 'we would have stayed'], ['flante', 'blowing'], ['acta est', 'was driven'],
+        ['gaudēbat', 'was delighted'], ['celerrimē', 'very quickly']
+      ],
+      translation: 'Claudia was preparing to set out for an island with her father. There were many difficulties: an old ship needing repair, a violent wind and a rough sea. But a skilled sailor, who had worked on the same ship for many years, promised them help so that they might sail safely. When the day came, a friend said firmly that he would come. While Claudia was carrying the food, she asked where the ship was. The sailor replied: "If the wind blows favourably, we will arrive sooner than we hope; if it had blown, we would have stayed." With the wind blowing favourably, the ship was driven by the sailors; the girl was delighted that she had arrived so very quickly.',
+      notes: [
+        'proficīscī parābat — deponent infinitive after parābat: "was preparing to set out".',
+        'nāvis vetus reficienda — gerundive of obligation agreeing with nāvis: "a ship that must be repaired".',
+        'quī … laborāverat — relative clause with pluperfect; multōs annōs is duration of time (accusative).',
+        'eādem in nāve — idem in the ablative: "on the same ship".',
+        'ut tūtē nāvigārent — purpose clause, imperfect subjunctive after a past main verb.',
+        'cum diēs vēnisset / cum cibum portāret — cum + pluperfect ("when") and cum + imperfect ("while").',
+        'sē ventūrum esse — indirect statement: accusative sē + future infinitive.',
+        'ubi nāvis esset — indirect question, so the verb is subjunctive.',
+        'sī flābit … perveniēmus — future ("live") condition: both verbs indicative.',
+        'sī flāvisset … mānsissēmus — past counterfactual: both verbs pluperfect subjunctive.',
+        'ventō secundō flante — ablative absolute: "with the wind blowing favourably".',
+        'ā nautīs acta est — analytic perfect passive with agent (ā + ablative); acta agrees with nāvis.',
+        'sē … pervēnisse — indirect statement with the perfect infinitive; celerrimē is a superlative adverb.'
+      ],
+      points: [
+        { la: 'cum patre', en: 'with her father (cum + ablative)', m: 1 },
+        { la: 'in īnsulam proficīscī parābat', en: 'was preparing to set out for the island (deponent infinitive)', m: 2 },
+        { la: 'multae difficultātēs erant', en: 'there were many difficulties', m: 1 },
+        { la: 'nāvis vetus reficienda', en: 'an old ship needing repair (gerundive)', m: 1 },
+        { la: 'ventus vehemēns, mare saevum', en: 'a violent wind, a rough sea (adjective agreement)', m: 2 },
+        { la: 'nauta perītus, quī … laborāverat', en: 'a skilled sailor who had worked (relative + pluperfect)', m: 2 },
+        { la: 'multōs annōs', en: 'for many years (accusative of duration)', m: 1 },
+        { la: 'eādem in nāve', en: 'on the same ship (idem, ablative)', m: 1 },
+        { la: 'eīs auxilium promīsit', en: 'promised them help (dative)', m: 2 },
+        { la: 'ut tūtē nāvigārent', en: 'so that they might sail safely (purpose)', m: 2 },
+        { la: 'cum diēs vēnisset', en: 'when the day came (cum + pluperfect subjunctive)', m: 2 },
+        { la: 'sē ventūrum esse', en: 'that he would come (indirect statement + future infinitive)', m: 2 },
+        { la: 'cum cibum portāret', en: 'while she was carrying the food (cum + imperfect subjunctive)', m: 2 },
+        { la: 'rogāvit ubi nāvis esset', en: 'she asked where the ship was (indirect question)', m: 2 },
+        { la: 'sī ventus secundus flābit', en: 'if the wind blows favourably (future condition)', m: 2 },
+        { la: 'celerius quam spērāmus', en: 'sooner / more quickly than we hope (comparative)', m: 2 },
+        { la: 'perveniēmus', en: 'we will arrive (future)', m: 1 },
+        { la: 'sī flāvisset, mānsissēmus', en: 'if it had blown, we would have stayed (counterfactual)', m: 2 },
+        { la: 'ventō secundō flante', en: 'with the wind blowing favourably (ablative absolute)', m: 2 },
+        { la: 'nāvis ā nautīs acta est', en: 'the ship was driven by the sailors (passive + agent)', m: 2 },
+        { la: 'puella gaudēbat', en: 'the girl was delighted (imperfect)', m: 1 },
+        { la: 'sē celerrimē pervēnisse', en: 'that she had arrived very quickly (perfect infinitive; superlative)', m: 2 },
+        { la: 'style & sense overall', en: 'fluent English, subjunctives and indirect statements natural (up to 3)', m: 3 }
+      ]
     }
   ];
 

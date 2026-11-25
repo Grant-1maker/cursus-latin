@@ -2053,7 +2053,8 @@
       if (locked) {
         card.appendChild(h('div', 'pmeta', 'unlocks at chapter ' + p.min + ' — raise the chapter in the header'));
       } else {
-        card.appendChild(h('div', 'pmeta', '≈ ' + p.text.split(/\s+/).length + ' words · chapter ' + p.min + '+'));
+        var wc = p.text.replace(/\[([^|]+)\|[^\]]*\]/g, '$1').trim().split(/\s+/).length;
+        card.appendChild(h('div', 'pmeta', wc + ' words · chapter ' + p.min + '+'));
         if (done[p.id]) card.appendChild(h('div', 'pass-done', '✓ read — rated "' + done[p.id] + '"'));
         card.onclick = function () { openPassage(p); };
       }
