@@ -306,7 +306,7 @@
     var wrow = h('div', 'tword-row');
     words.forEach(function (wd) {
       var chip = h('button', 'tword');
-      chip.appendChild(h('b', 'latin', esc(wd.l)));
+      chip.appendChild(h('b', 'latin', esc(wd.type === 'v' ? verbParts(wd) : wd.l)));
       chip.appendChild(h('span', 'pmeta', esc(wd.meaning || '')));
       chip.onclick = function () { buildTable(wd); };
       wrow.appendChild(chip);
@@ -811,7 +811,7 @@
     if (!card) { host.appendChild(h('div', 'bigcard', 'All mastered for this chapter')); host.appendChild(h('p', 'muted', 'Raise your chapter level or reset progress to keep going.')); return; }
     var w = card.w;
     var face, answer;
-    var fullEntry = (w.type === 'v' && w.p && !w.irr) ? w.p.join(', ') : w.l;
+    var fullEntry = w.type === 'v' ? verbParts(w) : w.l;
     if (state.vocabMode === 'le') {
       face = esc(w.l.split(',')[0]);
       answer = esc(fullEntry) + ' \u2014 ' + esc(w.meaning);
@@ -1011,7 +1011,7 @@
     conjSamples.forEach(function (cj) {
       var w = sampleWords.find(function (x) { return !x.irr && x.conj === cj; });
       if (!w) return;
-      var vcell = h('div', 'gcell', '<b class="latin">' + esc(w.l) + '</b>');
+      var vcell = h('div', 'gcell', '<b class="latin">' + esc(verbParts(w)) + '</b>');
       addLabel(vcell, 'indicative active');
       vcell.appendChild(vtable(w, V_HEADS, 'act'));
       if (canPass && !w.passOmit && !w.dep) { addLabel(vcell, 'indicative passive'); vcell.appendChild(vtable(w, V_HEADS, 'pass')); }
